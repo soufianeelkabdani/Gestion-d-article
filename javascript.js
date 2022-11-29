@@ -6,7 +6,7 @@ function clearFields() {
     document.querySelector("#Prix").value = "";
     document.querySelector("#Dateproduction").value = "";
     document.querySelector("#Type").value = "";
-    const Promo = document.querySelectorAll('input[nom="M"]:checked').value = "";
+    document.querySelectorAll('input[nom="M"]:checked').value = "";
 
 }
 //  ADD DATA
@@ -27,7 +27,7 @@ document.querySelector(".formulaire").addEventListener("submit", (e) => {
         promoValue.push(x.value);
 
     });
-    let reg = /^[a-z]{2,30}$/
+    let reg = /^[a-zA-Z]{2,30}$/
 
     // VALIDATE
     if (nom === "" || reg.test(nom) === false || marque === "" || reg.test(marque) === false || prix === "" || date === "" || type === "" || promoValue.length == "") {
@@ -64,8 +64,10 @@ document.querySelector(".formulaire").addEventListener("submit", (e) => {
             selectedRow.children[0].textContent = nom;
             selectedRow.children[1].textContent = marque;
             selectedRow.children[2].textContent = prix;
-            selectedRow.children[3].texContent = date;
-            selectedRow.children[4].texContent = type;
+            selectedRow.children[3].textContent = date;
+            selectedRow.children[4].textContent = type;
+            selectedRow.children[5].textContent = promoValue;
+
             selectedRow = null;
 
         }
